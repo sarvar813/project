@@ -1,0 +1,92 @@
+.dessert-grid-section {
+    width: 100%;
+    overflow: hidden;
+    margin: 40px 0;
+}
+
+.d-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 25vw;
+    width: 100%;
+}
+
+.d-grid-item {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.d-grid-item.text {
+    background-color: #6a0572;
+    /* Soft Purple for desserts */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.d-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.d-subtitle {
+    font-family: 'Brush Script MT', cursive;
+    font-size: clamp(24px, 3vw, 36px);
+    color: #ff9d00;
+}
+
+.d-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.d-add-btn {
+    background: #fff;
+    color: #6a0572;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Oswald', sans-serif;
+}
+
+.d-add-btn:hover:not(:disabled) {
+    background: #000;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.d-add-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.d-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.d-grid-item.image:hover .d-image {
+    transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+    .d-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 50vw;
+    }
+}

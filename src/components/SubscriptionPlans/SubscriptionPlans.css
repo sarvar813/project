@@ -1,0 +1,411 @@
+.subscription-plans-section {
+    padding: 100px 0;
+    background: #000;
+    color: #fff;
+    position: relative;
+}
+
+.plans-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.p-badge {
+    color: var(--secondary-color);
+    letter-spacing: 5px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.plans-header .section-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.plans-header .section-title span {
+    color: var(--primary-color);
+}
+
+.plans-header .section-desc {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.plan-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    transition: 0.4s;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 40px rgba(227, 0, 52, 0.15);
+}
+
+.plan-card.popular {
+    border: 2px solid var(--primary-color);
+    background: rgba(227, 0, 52, 0.05);
+}
+
+.popular-tag {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 5px 15px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+}
+
+.plan-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.plan-name {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.plan-duration {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.plan-price {
+    margin-bottom: 30px;
+}
+
+.currency {
+    font-size: 1.5rem;
+    font-weight: 700;
+    vertical-align: top;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.amount {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.plan-gift {
+    background: rgba(241, 180, 23, 0.1);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 1px dashed var(--secondary-color);
+}
+
+.gift-label {
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.plan-gift p {
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.plan-features li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+
+.check-icon {
+    color: #22c55e;
+    font-size: 0.9rem;
+}
+
+.select-plan-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 15px;
+    border: none;
+    background: #fff;
+    color: #000;
+    font-weight: 900;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.plan-card.popular .select-plan-btn {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.select-plan-btn:hover {
+    background: var(--secondary-color);
+    color: #000;
+    transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+    .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Modal Styles */
+.sub-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.sub-modal-content {
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 50px 40px;
+    max-width: 450px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--primary-color);
+}
+
+.modal-icon {
+    font-size: 4rem;
+    margin-bottom: 25px;
+}
+
+.sub-modal-content h3 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.modal-desc {
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 18px 20px 18px 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    color: #fff;
+    font-size: 1.1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.modal-submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-submit-btn:hover:not(:disabled) {
+    background: var(--secondary-color);
+    color: #000;
+    transform: scale(1.02);
+}
+
+.modal-submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.code-input-center {
+    text-align: center;
+    letter-spacing: 15px;
+    font-size: 2rem !important;
+    padding-left: 20px !important;
+}
+
+.step-info {
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    background: rgba(241, 180, 23, 0.05);
+    padding: 10px;
+    border-radius: 10px;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.v-error-info {
+    text-align: left;
+    background: rgba(227, 0, 52, 0.05);
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+    border: 1px solid rgba(227, 0, 52, 0.2);
+}
+
+.v-error-info p {
+    color: var(--primary-color);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.v-error-info ol {
+    padding-left: 20px;
+}
+
+.v-error-info li {
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.v-error-info a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.v-error-info a:hover {
+    text-decoration: underline;
+}
+
+.back-btn-link {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-top: 15px;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.back-btn-link:hover {
+    color: #fff;
+}
+
+.hint-text {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 10px;
+}
+
+.success-message h3 {
+    color: #22c55e;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

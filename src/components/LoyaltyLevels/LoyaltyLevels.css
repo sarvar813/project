@@ -1,0 +1,233 @@
+.loyalty-levels-section {
+    padding: 100px 0;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.loyalty-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.loyalty-badge {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.loyalty-header .section-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.loyalty-header .section-title span {
+    color: var(--secondary-color);
+}
+
+.loyalty-header .section-desc {
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+.levels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.level-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 40px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.level-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.level-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+.level-name {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.level-cashback {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.cb-value {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+}
+
+.cb-label {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.level-range {
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.level-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 35px;
+    text-align: left;
+}
+
+.level-benefits li {
+    color: #cbd5e1;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.level-benefits li .bullet {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+}
+
+.join-btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid var(--level-color);
+    background: transparent;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.join-btn:hover {
+    background: var(--level-color);
+    color: #000;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Specific glows for cards */
+.level-card.gold::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, transparent, #ffd700, transparent);
+    z-index: -1;
+    border-radius: 32px;
+    opacity: 0.2;
+}
+
+.loyalty-bg-blob {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(227, 0, 52, 0.1) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .level-card {
+        padding: 30px 20px;
+    }
+}
+/* NEW LOYALTY UPGRADES */
+.level-card.active {
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid #fff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.level-card.locked {
+    filter: grayscale(0.8);
+    opacity: 0.7;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.active-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    color: #000;
+    font-size: 0.65rem;
+    font-weight: 900;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.progress-info-line {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.locked-benefit {
+    color: #475569 !important;
+}
+
+.lock-icon {
+    font-size: 3rem;
+    opacity: 0.5;
+}
+
+.level-card.gold.active {
+    border-color: #ffd700;
+    box-shadow: 0 20px 50px rgba(255, 215, 0, 0.15);
+}
+
+.level-card.silver.active {
+    border-color: #c0c0c0;
+}
+
+.level-card.bronze.active {
+    border-color: #cd7f32;
+}
+
+.join-btn:active {
+    transform: scale(0.95);
+}
+

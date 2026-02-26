@@ -1,0 +1,55 @@
+.custom-cursor-dot,
+.custom-cursor-outline {
+    position: fixed;
+    pointer-events: none;
+    z-index: 100000;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s, opacity 0.3s;
+    border-radius: 50%;
+}
+
+.custom-cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--secondary-color);
+}
+
+.custom-cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+}
+
+/* Hover active state */
+.custom-cursor-dot.active {
+    width: 0px;
+    height: 0px;
+}
+
+.custom-cursor-outline.active {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(227, 0, 52, 0.15);
+    border-color: var(--secondary-color);
+}
+
+/* Click state */
+.custom-cursor-outline.clicked {
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: rgba(227, 0, 52, 0.3);
+}
+
+/* Hide when cursor leaves window or on touch devices */
+.custom-cursor-dot.hidden,
+.custom-cursor-outline.hidden {
+    opacity: 0;
+}
+
+@media (pointer: coarse) {
+
+    .custom-cursor-dot,
+    .custom-cursor-outline {
+        display: none;
+    }
+}

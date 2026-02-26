@@ -1,0 +1,216 @@
+.app-download-section {
+    padding: 100px 5%;
+    background: radial-gradient(circle at top right, #1e293b, #0f172a);
+    overflow: hidden;
+    position: relative;
+}
+
+.app-download-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.app-content-left {
+    flex: 1;
+    max-width: 600px;
+}
+
+.app-badge {
+    background: rgba(227, 0, 52, 0.1);
+    color: #e30034;
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 20px;
+    border: 1px solid rgba(227, 0, 52, 0.2);
+}
+
+.app-content-left h2 {
+    font-size: 48px;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.app-content-left h2 span {
+    color: #e30034;
+}
+
+.app-content-left p {
+    color: #94a3b8;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.app-buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.store-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #000;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.store-btn:hover {
+    transform: translateY(-5px);
+    background: #e30034;
+    border-color: #e30034;
+}
+
+.store-btn .icon {
+    font-size: 28px;
+}
+
+.store-btn .btn-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.store-btn .btn-text small {
+    font-size: 10px;
+    opacity: 0.7;
+    text-transform: uppercase;
+}
+
+.store-btn .btn-text span {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.app-features-mini {
+    display: flex;
+    gap: 25px;
+}
+
+.mini-feat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mini-feat .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.mini-feat .dot.green {
+    background: #22c55e;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+}
+
+.mini-feat .dot.gold {
+    background: #fbbf24;
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+}
+
+.mini-feat .dot.red {
+    background: #e30034;
+    box-shadow: 0 0 10px rgba(227, 0, 82, 0.5);
+}
+
+.mini-feat span {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Mockup Styles */
+.app-mockup-right {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-mockup {
+    width: 280px;
+    height: 580px;
+    background: #000;
+    border-radius: 40px;
+    padding: 12px;
+    border: 8px solid #334155;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 28px;
+    overflow: hidden;
+    position: relative;
+}
+
+.phone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.screen-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.overlay-logo {
+    color: #fff;
+    font-weight: 900;
+    font-size: 32px;
+    letter-spacing: 5px;
+}
+
+.abstract-shape {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: linear-gradient(45deg, #e30034, #6366f1);
+    filter: blur(80px);
+    opacity: 0.2;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+@media (max-width: 992px) {
+    .app-download-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .app-buttons {
+        justify-content: center;
+    }
+
+    .app-features-mini {
+        justify-content: center;
+    }
+
+    .app-content-left {
+        max-width: 100%;
+    }
+}

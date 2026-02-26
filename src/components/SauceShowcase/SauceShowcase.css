@@ -1,0 +1,210 @@
+.sauce-showcase {
+    background-color: #0a0a0a;
+    padding: 100px 0;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+}
+
+.sauce-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.section-badge {
+    color: var(--secondary-color);
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(32px, 5vw, 56px);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.section-desc {
+    color: #888;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.sauce-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.sauce-card {
+    position: relative;
+    background: #141414;
+    border: 1px solid #222;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    height: 500px;
+    /* Fixed height for consistency on desktop */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.sauce-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.sauce-image-box {
+    flex: 1;
+    height: 100%;
+    /* Ensure it takes full height of the card */
+    position: relative;
+    overflow: hidden;
+}
+
+.sauce-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.sauce-card:hover .sauce-image-box img {
+    transform: scale(1.1);
+}
+
+.sauce-icon-floating {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--accent-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.sauce-info-box {
+    flex: 1.2;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.sauce-subtitle {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.sauce-name {
+    font-family: var(--font-heading);
+    font-size: 38px;
+    margin-bottom: 25px;
+    line-height: 1;
+}
+
+.sauce-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.sauce-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #ccc;
+}
+
+.sauce-features li span {
+    width: 6px;
+    height: 6px;
+    background: var(--accent-color);
+    border-radius: 50%;
+}
+
+.explore-sauce-btn {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1px;
+    width: fit-content;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sauce-card:hover .explore-sauce-btn {
+    background: var(--accent-color);
+}
+
+.card-bg-glow {
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: var(--accent-color);
+    filter: blur(80px);
+    opacity: 0.1;
+    transition: 0.5s;
+}
+
+.sauce-card:hover .card-bg-glow {
+    opacity: 0.3;
+    width: 300px;
+    height: 300px;
+}
+
+@media (max-width: 1100px) {
+    .sauce-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sauce-info-box {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sauce-card {
+        flex-direction: column;
+    }
+
+    .sauce-image-box {
+        height: 250px;
+    }
+
+    .sauce-container {
+        padding: 0 20px;
+    }
+}

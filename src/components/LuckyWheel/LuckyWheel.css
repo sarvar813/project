@@ -1,0 +1,172 @@
+.lucky-wheel-container {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+    text-align: center;
+}
+
+.wheel-header {
+    margin-bottom: 30px;
+}
+
+.wheel-header svg {
+    font-size: 40px;
+    color: #f1c40f;
+    margin-bottom: 10px;
+}
+
+.wheel-header h3 {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.wheel-header p {
+    font-size: 14px;
+    color: #888;
+}
+
+.wheel-box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.wheel-pointer {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 40px;
+    background: #111;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    z-index: 20;
+}
+
+.wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 8px solid #111;
+    transition: transform 5s cubic-bezier(0.15, 0, 0.15, 1);
+}
+
+.wheel-sector {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 0;
+    right: 0;
+    transform-origin: 0% 100%;
+    background: var(--color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.sector-text {
+    position: absolute;
+    left: 20px;
+    bottom: 40px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 900;
+    transform: rotate(45deg);
+    text-transform: uppercase;
+    width: 100px;
+    text-align: center;
+}
+
+.spin-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    border: 4px solid #111;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 12px;
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.spin-btn:hover:not(:disabled) {
+    background: #111;
+    color: #fff;
+}
+
+.spin-btn:disabled {
+    cursor: not-allowed;
+    background: #eee;
+    color: #999;
+}
+
+/* Prize Modal */
+.prize-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.prize-modal {
+    background: #fff;
+    padding: 50px;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    animation: prizePop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes prizePop {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+}
+
+.gift-icon {
+    font-size: 80px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.prize-modal h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.prize-modal p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.prize-modal button {
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+}

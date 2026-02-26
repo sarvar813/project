@@ -1,0 +1,155 @@
+.courier-panel {
+    background: #f4f6f8;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+.courier-header {
+    background: #111;
+    color: #fff;
+    padding: 30px;
+}
+
+.c-user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.c-icon {
+    font-size: 40px;
+    color: var(--primary-color);
+}
+
+.c-user h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.online-badge {
+    font-size: 12px;
+    background: #4caf50;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.courier-tabs {
+    display: flex;
+    background: #fff;
+    padding: 5px;
+    margin: 20px;
+    border-radius: 15px;
+    gap: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.courier-tabs button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    background: none;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #666;
+}
+
+.courier-tabs button.active {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.courier-content {
+    padding: 0 20px;
+}
+
+.order-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.courier-order-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+
+.order-id {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.order-time {
+    color: #888;
+    font-size: 14px;
+}
+
+.customer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #444;
+}
+
+.info-row svg {
+    color: var(--primary-color);
+    width: 16px;
+}
+
+.info-row a {
+    color: #2196f3;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.done-btn {
+    width: 100%;
+    padding: 18px;
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.done-btn:hover {
+    background: #43a047;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.2);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 100px 20px;
+    color: #888;
+}

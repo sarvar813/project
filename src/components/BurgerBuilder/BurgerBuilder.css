@@ -1,0 +1,314 @@
+.burger-builder {
+    padding: 100px 0;
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.builder-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding: 0 20px;
+    align-items: center;
+}
+
+/* VISUAL SIDE */
+.builder-visual {
+    position: sticky;
+    top: 150px;
+}
+
+.burger-layers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    transform: rotateX(15deg) rotateY(-10deg);
+    transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.burger-layers.is-exploded {
+    transform: rotateX(15deg) rotateY(15deg) scale(0.9);
+}
+
+.builder-visual {
+    position: sticky;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.explode-toggle {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.4s;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.explode-toggle:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.explode-toggle.active {
+    background: var(--primary-color);
+    box-shadow: 0 0 20px rgba(227, 0, 52, 0.5);
+}
+
+.burger-layers:hover {
+    transform: rotateX(5deg) rotateY(5deg);
+}
+
+.layer {
+    width: 280px;
+    height: 40px;
+    border-radius: 50px;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.bun-top {
+    height: 80px;
+    border-radius: 100px 100px 20px 20px;
+}
+
+.bun-bottom {
+    height: 50px;
+    border-radius: 20px 20px 60px 60px;
+}
+
+.meat {
+    height: 45px;
+    width: 260px;
+    border: 2px solid #5a2d00;
+}
+
+.cheese {
+    height: 10px;
+    width: 270px;
+    border-radius: 5px;
+    margin: -5px 0;
+    z-index: 2;
+}
+
+.sauce {
+    height: 15px;
+    width: 240px;
+    background: #e30034;
+    filter: blur(2px);
+    opacity: 0.8;
+}
+
+.topping {
+    height: 15px;
+    border-radius: 10px;
+}
+
+.t1 {
+    background: #5edc1f;
+    width: 280px;
+}
+
+/* Lettuce */
+.t2 {
+    background: #ff4d4d;
+    width: 250px;
+}
+
+/* Tomato */
+.t3 {
+    background: #2d5a27;
+    width: 240px;
+}
+
+/* Pickle */
+.t5 {
+    background: #006400;
+    width: 260px;
+}
+
+/* Jalapeno */
+
+/* CONTROLS SIDE */
+.builder-controls {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    padding: 50px;
+}
+
+.builder-header h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.builder-header p {
+    color: #888;
+    margin-bottom: 40px;
+}
+
+.control-group {
+    margin-bottom: 35px;
+}
+
+.control-group h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #aaa;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.options-grid button {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.options-grid button span {
+    display: block;
+    font-size: 11px;
+    color: var(--primary-color);
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+.options-grid button.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.options-grid button.active span {
+    color: #fff;
+}
+
+.check-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 10px;
+}
+
+.builder-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-price span {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.total-price h3 {
+    font-size: 36px;
+    color: #fff;
+}
+
+.finish-btn {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 18px 35px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(227, 0, 52, 0.3);
+}
+
+.finish-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(227, 0, 52, 0.5);
+}
+
+@media (max-width: 992px) {
+    .builder-container {
+        grid-template-columns: 1fr;
+    }
+
+    .builder-visual {
+        position: static;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .builder-controls {
+        padding: 30px 20px;
+    }
+
+    .builder-header h2 {
+        font-size: 24px;
+    }
+}
+
+.builder-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.share-btn {
+    background: #fff;
+    color: #000;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.share-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-5px);
+}

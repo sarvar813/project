@@ -1,0 +1,199 @@
+.mood-trigger {
+    position: fixed;
+    left: 30px;
+    bottom: 110px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    color: #fff;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 998;
+    box-shadow: 0 10px 20px rgba(155, 89, 182, 0.4);
+    transition: 0.3s;
+}
+
+.mood-trigger:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+.mood-trigger .tooltip {
+    position: absolute;
+    left: 70px;
+    background: #000;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.mood-trigger:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mood-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 10001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mood-modal {
+    background: var(--bg-color);
+    width: 90%;
+    max-width: 450px;
+    padding: 50px 30px;
+    border-radius: 30px;
+    position: relative;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-color);
+}
+
+.close-mood {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--text-color);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mood-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.mood-grid button {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 25px 15px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--text-color);
+}
+
+.mood-grid button:hover {
+    border-color: var(--hover-color);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.m-icon {
+    font-size: 32px;
+}
+
+.m-label {
+    font-weight: 700;
+}
+
+.pref-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.pref-list button {
+    padding: 18px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pref-list button:hover {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.magic-loader {
+    margin-bottom: 20px;
+}
+
+.spin-magic {
+    font-size: 50px;
+    color: #9b59b6;
+    animation: magicSpin 1s infinite linear;
+}
+
+@keyframes magicSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rec-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+    border: 1px solid var(--border-color);
+}
+
+.rec-card img {
+    width: 150px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.add-rec-btn {
+    width: 100%;
+    padding: 15px;
+    background: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 800;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.try-again {
+    background: none;
+    border: none;
+    color: var(--text-gray);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+}

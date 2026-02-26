@@ -1,0 +1,277 @@
+.ai-trigger-btn {
+    position: fixed;
+    right: 30px;
+    bottom: 100px;
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ai-trigger-btn:hover {
+    transform: scale(1.05) translateY(-5px);
+    background: var(--primary-color);
+}
+
+.ai-icon-wrapper {
+    position: relative;
+    font-size: 20px;
+}
+
+.ai-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 8px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.ai-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 0.4s ease;
+}
+
+.ai-modal {
+    background: rgba(20, 20, 20, 0.95);
+    width: 100%;
+    max-width: 500px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: modalSlideUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ai-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.ai-close:hover {
+    background: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+.ai-header {
+    background: linear-gradient(135deg, var(--primary-color), #8b0000);
+    padding: 40px 30px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.bot-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+    animation: botPulse 2s infinite ease-in-out;
+}
+
+.ai-header h3 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.ai-header p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.ai-body {
+    padding: 40px 30px;
+}
+
+/* QUESTIONS */
+.ai-question-box h4 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.4;
+    color: #eee;
+}
+
+.ai-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ai-options button {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 18px 25px;
+    border-radius: 15px;
+    font-size: 16px;
+    text-align: left;
+    transition: 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ai-options button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--secondary-color);
+    transform: translateX(10px);
+}
+
+/* RESULT */
+.ai-result-box {
+    text-align: center;
+}
+
+.ai-result-box h4 {
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+}
+
+.suggested-product {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+}
+
+.suggested-product img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.suggested-info h5 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.suggested-info .price {
+    color: var(--secondary-color);
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.ai-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.add-ai-btn {
+    width: 100%;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    box-shadow: 0 10px 30px rgba(227, 0, 52, 0.3);
+}
+
+.retry-btn {
+    background: transparent;
+    color: #888;
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+/* ANIMATIONS */
+@keyframes botPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .ai-trigger-btn {
+        right: 20px;
+        bottom: 90px;
+    }
+}

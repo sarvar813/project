@@ -1,0 +1,168 @@
+.loyalty-stamp-card {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 25px;
+    padding: 25px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.loyalty-stamp-card::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: var(--primary-color);
+    filter: blur(80px);
+    opacity: 0.2;
+}
+
+.loyalty-stamp-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.loyalty-stamp-header h3 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.loyalty-stamp-header span {
+    color: var(--primary-color);
+}
+
+.loyalty-stamp-header p {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+.stamps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.stamp-slot {
+    aspect-ratio: 1/1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.stamp-slot.filled {
+    background: rgba(227, 0, 52, 0.1);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 15px rgba(227, 0, 52, 0.2);
+}
+
+.stamp-icon {
+    font-size: 28px;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.check-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #22c55e;
+    color: #fff;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #1e293b;
+}
+
+.stamp-placeholder {
+    font-size: 20px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.05);
+}
+
+.reward-slot {
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    border: none;
+    color: #000;
+    grid-column: span 1;
+}
+
+.reward-slot .gift-icon {
+    font-size: 30px;
+}
+
+.reward-slot.ready {
+    animation: bounce 1s infinite;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.loyalty-stamp-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.loyalty-hint {
+    text-align: center;
+    font-size: 13px;
+    color: #cbd5e1;
+}
+
+.loyalty-hint span {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.claim-reward-btn {
+    width: 100%;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(227, 0, 52, 0.3);
+}
+
+.loyalty-progress-mini {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}

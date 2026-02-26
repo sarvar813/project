@@ -1,0 +1,107 @@
+.news-parallax {
+    position: relative;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 50px;
+    background-image: url('https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=2000&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #000;
+}
+
+.news-parallax::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+    z-index: 1;
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.p-subtitle {
+    color: var(--secondary-color);
+    font-family: 'Brush Script MT', cursive;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.p-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.p-hashtag {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    letter-spacing: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+}
+
+.p-social {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.p-social a {
+    color: #fff;
+    font-size: 24px;
+    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.p-social a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .news-parallax {
+        height: 450px;
+        background-attachment: scroll;
+    }
+
+    .p-subtitle {
+        font-size: 32px;
+    }
+
+    .p-title {
+        font-size: 3rem;
+    }
+
+    .p-hashtag {
+        letter-spacing: 5px;
+        font-size: 16px;
+    }
+}
